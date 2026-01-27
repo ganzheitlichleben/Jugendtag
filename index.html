@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energie-Check – Wie voll ist dein Akku?</title>
+  <title>Energie-Check – Mobile First</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-dark: #0b1020;
-      --bg-light: #f8fafc;
-      --text-light: #e5e7eb;
+      --dark: #070b18;
+      --light: #f8fafc;
       --text-dark: #0f172a;
-      --neon: #22ff88;
-      --gray: #94a3b8;
+      --text-light: #e5e7eb;
+      --accent: #22ff88;
+      --muted: #94a3b8;
     }
 
     * {
@@ -24,325 +24,234 @@
 
     body {
       margin: 0;
-      background: var(--bg-light);
+      background: var(--light);
       color: var(--text-dark);
-      line-height: 1.6;
     }
 
     section {
-      padding: 90px 20px;
+      padding: 64px 16px;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 520px; /* MOBILE FIRST */
       margin: 0 auto;
       text-align: center;
     }
 
     h1 {
-      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-size: 2.2rem;
       font-weight: 900;
-      margin-bottom: 24px;
-      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-size: 1.7rem;
       font-weight: 800;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     h3 {
-      font-size: 1.6rem;
-      margin-bottom: 18px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 1.05rem;
-      color: var(--gray);
+      font-size: 1rem;
+      color: var(--muted);
       margin-bottom: 14px;
+      line-height: 1.5;
     }
 
+    /* HERO */
     .hero {
       background: radial-gradient(circle at top, #16204a, #070b18 70%);
       color: var(--text-light);
+      padding-top: 80px;
     }
 
     .hero p {
       color: #cbd5f5;
-      max-width: 720px;
-      margin: 0 auto 30px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 20px 42px;
+      display: block;
+      width: 100%;
+      padding: 18px;
       font-size: 1.1rem;
       font-weight: 800;
-      color: #0b1020;
-      background: var(--neon);
+      color: #070b18;
+      background: var(--accent);
       border-radius: 14px;
       text-decoration: none;
-      box-shadow: 0 0 40px rgba(34,255,136,0.35);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 0 60px rgba(34,255,136,0.55);
+      box-shadow: 0 0 30px rgba(34,255,136,0.4);
+      margin-top: 18px;
     }
 
     .hint {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       opacity: 0.8;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 26px;
-      margin-top: 50px;
-    }
-
-    .card {
+    /* INFO BOXES */
+    .box {
       background: white;
-      padding: 34px 30px;
-      border-radius: 22px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-      font-size: 1.05rem;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      margin-bottom: 18px;
       font-weight: 600;
-    }
-
-    .card span {
-      font-size: 2.4rem;
-      display: block;
-      margin-bottom: 14px;
     }
 
     .soft {
       background: linear-gradient(135deg, #ecfeff, #f0fdf4);
     }
 
-    .about {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      line-height: 1.7;
+    /* ABOUT */
+    .about p {
       color: #334155;
     }
 
+    /* FOOTER */
     footer {
-      padding: 50px 20px;
       background: #020617;
       color: #94a3b8;
+      font-size: 0.75rem;
+      padding: 40px 16px;
       text-align: center;
-      font-size: 0.9rem;
     }
 
     footer a {
-      color: var(--neon);
+      color: var(--accent);
       text-decoration: none;
       font-weight: 600;
-      margin: 0 8px;
+      display: inline-block;
+      margin: 6px;
     }
 
-    #impressum,
-    #datenschutz {
+    #impressum, #datenschutz {
       background: #020617;
       color: #cbd5f5;
-      font-size: 0.85rem;
-      padding: 70px 20px;
+      font-size: 0.75rem;
+      padding: 50px 16px;
       text-align: center;
     }
 
-    #impressum p,
-    #datenschutz p {
-      color: #cbd5f5;
-      margin-bottom: 10px;
+    #impressum a, #datenschutz a {
+      color: var(--accent);
     }
 
-    #impressum a,
-    #datenschutz a {
-      color: var(--neon);
-      text-decoration: none;
-      font-weight: 600;
+    /* DESKTOP OPTIMIERUNG */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 900px;
+      }
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.2rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h1>Wie voll ist dein Akku wirklich?</h1>
-      <p>
-        Schule. Handy. Dauerstress.<br>
-        Kein Drama – aber vielleicht läuft dein Akku auf Reserve.
-      </p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Wie voll ist dein Akku?</h1>
+    <p>Schule. Handy. Dauerstress.<br>Check in 2 Minuten, wo deine Energie bleibt.</p>
 
-      <a class="btn"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
-         target="_blank" rel="noopener">
-        Energie-Check starten →
-      </a>
+    <a class="btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
+       target="_blank" rel="noopener">
+       Jetzt Energie checken
+    </a>
 
-      <div class="hint">⏱ 2 Minuten · 🔒 anonym · 💸 kostenlos</div>
-    </div>
-  </section>
+    <div class="hint">⏱ 2 Minuten · 🔒 anonym · 💸 kostenlos</div>
+  </div>
+</section>
 
-  <!-- WARUM -->
-  <section>
-    <div class="container">
-      <h2>Warum so viele Jugendliche leer laufen</h2>
+<!-- WARUM -->
+<section>
+  <div class="container">
+    <h2>Warum so viele leer laufen</h2>
 
-      <div class="cards">
-        <div class="card"><span>📱</span>Dauer-Online ohne echte Pausen</div>
-        <div class="card"><span>⚡</span>Schule, Erwartungen, Tempo</div>
-        <div class="card"><span>🔋</span>Zu wenig echtes Auftanken</div>
-      </div>
-    </div>
-  </section>
+    <div class="box">📱 Dauer online – kaum echte Pausen</div>
+    <div class="box">⚡ Schule, Tempo, Erwartungen</div>
+    <div class="box">🔋 Zu wenig echtes Auftanken</div>
+  </div>
+</section>
 
-  <!-- CHECK -->
-  <section class="soft">
-    <div class="container">
-      <h2>Der Energie-Check</h2>
-      <p>Kein Test. Keine Bewertung. Nur ehrliche Fragen zu deinem Alltag.</p>
+<!-- CHECK -->
+<section class="soft">
+  <div class="container">
+    <h2>Der Energie-Check</h2>
+    <p>Keine Bewertung. Keine Diagnose.<br>Nur ehrliche Fragen.</p>
 
-      <a class="btn"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
-         target="_blank" rel="noopener">
-        Jetzt starten →
-      </a>
-    </div>
-  </section>
+    <a class="btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
+       target="_blank" rel="noopener">
+       Jetzt starten
+    </a>
+  </div>
+</section>
 
-  <!-- ELTERN -->
-  <section>
-    <div class="container">
-      <h2>Für Eltern</h2>
-      <p>
-        Der Energie-Check hilft Jugendlichen, sich selbst besser zu verstehen –
-        und erleichtert Gespräche ohne Druck oder Vorwürfe.
-      </p>
-    </div>
-  </section>
+<!-- ELTERN -->
+<section>
+  <div class="container">
+    <h2>Für Eltern</h2>
+    <p>Der Check hilft Jugendlichen, sich selbst besser zu verstehen – und öffnet Gespräche ohne Druck.</p>
+  </div>
+</section>
 
-  <!-- WIR SIND -->
-  <section class="soft">
-    <div class="container">
-      <h2>Wer wir sind – und warum uns das wichtig ist</h2>
+<!-- WIR -->
+<section class="soft">
+  <div class="container about">
+    <h2>Wir sind David & Stefanie</h2>
 
-      <div class="about">
-        <p>
-          Wir sind <strong>Stefanie</strong> und <strong>David</strong>.
-        </p>
+    <p><strong>Stefanie</strong> ist mehrfache Mutter, Nähr- und Vitalstoffcoachin und arbeitet ganzheitlich mit Familien.</p>
+    <p><strong>David</strong> ist Familienvater und beschäftigt sich seit Jahren mit gesunden Routinen und alltagstauglicher Ernährung.</p>
 
-        <p>
-          Stefanie ist mehrfache Mutter, Nähr- und Vitalstoffcoachin und arbeitet
-          ganzheitlich mit Familien. In ihrem Alltag erlebt sie täglich, wie sehr
-          Lebensstil, Ernährung und innere Balance Kinder und Jugendliche prägen.
-        </p>
+    <p>Mit dem Energie-Check wollen wir Jugendlichen helfen, ihren Alltag besser zu verstehen – und Eltern eine neue Perspektive geben.</p>
+  </div>
+</section>
 
-        <p>
-          David ist selbst Familienvater und beschäftigt sich seit vielen Jahren
-          mit gesunden Routinen – und damit, wie Nährstoffe und einfache Gewohnheiten
-          praktisch und alltagstauglich ins Leben von Menschen integriert werden können.
-        </p>
+<!-- VORTRAG -->
+<section>
+  <div class="container">
+    <h2>Kostenloser Live-Vortrag</h2>
+    <p>Für Eltern · Live per Zoom</p>
 
-        <p>
-          Mit dem Energie-Check möchten wir Jugendlichen helfen, ihren eigenen Alltag
-          besser zu verstehen – und Eltern eine neue, entspannte Perspektive eröffnen.
-          Ohne Schuldzuweisungen. Ohne Druck.
-        </p>
-      </div>
-    </div>
-  </section>
+    <p><strong>info@ganzheitlichleben.online</strong></p>
+  </div>
+</section>
 
-  <!-- VORTRAG -->
-  <section>
-    <div class="container">
-      <h2>Kostenloser Live-Vortrag für Eltern</h2>
-      <p>Live per Zoom · Termin folgt per E-Mail</p>
+<!-- FOOTER -->
+<footer>
+  <a href="#impressum">Impressum</a>
+  <a href="#datenschutz">Datenschutz</a>
+</footer>
 
-      <p style="font-size:0.95rem;">
-        👉 Interesse? Schreiben Sie an:<br>
-        <strong>info@ganzheitlichleben.online</strong>
-      </p>
+<!-- IMPRESSUM -->
+<section id="impressum">
+  <h3>Impressum</h3>
+  <p><strong>David Müller</strong><br>Trillerstr. 10 · 08066 Zwickau<br>eq-david@gmx.de</p>
+  <p><strong>Stefanie Heidrich</strong><br>Dresdner Str. 1a · 01809 Dohna<br>
+    <a href="https://www.ganzheitlichleben.online" target="_blank">www.ganzheitlichleben.online</a>
+  </p>
+  <p>Verantwortlich i.S.d. §55 RStV: David Müller</p>
+</section>
 
-      <p style="font-size:0.8rem;">
-        Der Vortrag richtet sich ausschließlich an Eltern.
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <a href="#impressum">Impressum</a> ·
-    <a href="#datenschutz">Datenschutz</a>
-  </footer>
-
-  <!-- IMPRESSUM -->
-  <section id="impressum">
-    <h3>Impressum</h3>
-    <p>Angaben gemäß § 5 TMG</p>
-
-    <p>
-      <strong>David Müller</strong><br>
-      Trillerstr. 10<br>
-      08066 Zwickau<br>
-      E-Mail: eq-david@gmx.de
-    </p>
-
-    <p>
-      <strong>Stefanie Heidrich</strong><br>
-      Dresdner Str. 1a<br>
-      01809 Dohna<br>
-      E-Mail: info@ganzheitlichleben.online<br>
-      Website:
-      <a href="https://www.ganzheitlichleben.online"
-         target="_blank" rel="noopener noreferrer">
-         www.ganzheitlichleben.online
-      </a>
-    </p>
-
-    <p>
-      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
-      <strong>David Müller</strong>
-    </p>
-  </section>
-
-  <!-- DATENSCHUTZ -->
-  <section id="datenschutz">
-    <h3>Datenschutzhinweis</h3>
-
-    <p>
-      Diese Website erhebt selbst keine personenbezogenen Daten.
-    </p>
-
-    <p>
-      Der Energie-Check wird über <strong>Google Forms</strong> bereitgestellt.
-      Beim Aufruf gelten die Datenschutzbestimmungen von Google:<br>
-      <a href="https://policies.google.com/privacy"
-         target="_blank" rel="noopener noreferrer">
-         https://policies.google.com/privacy
-      </a>
-    </p>
-
-    <p>
-      Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschließlich
-      zur Bearbeitung Ihrer Anfrage und zur Organisation des Vortrags verwendet.
-      Eine Weitergabe an Dritte erfolgt nicht.
-    </p>
-
-    <p>
-      Verantwortlich im Sinne der DSGVO:<br>
-      David Müller &amp; Stefanie Heidrich<br>
-      (Kontaktdaten siehe Impressum)
-    </p>
-  </section>
+<!-- DATENSCHUTZ -->
+<section id="datenschutz">
+  <h3>Datenschutz</h3>
+  <p>Diese Website erhebt selbst keine personenbezogenen Daten.</p>
+  <p>Der Energie-Check läuft über Google Forms:
+    <a href="https://policies.google.com/privacy" target="_blank">Datenschutz Google</a>
+  </p>
+  <p>Kontakt per E-Mail dient ausschließlich der Organisation des Vortrags.</p>
+</section>
 
 </body>
 </html>
