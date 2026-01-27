@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energie-Check für Jugendliche & Eltern</title>
+  <title>Energie-Check – Wie voll ist dein Akku?</title>
 
-  <!-- Schrift -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --green: #10b981;
-      --dark: #0f172a;
-      --gray: #64748b;
-      --light: #f8fafc;
-      --white: #ffffff;
+      --bg-dark: #0b1020;
+      --bg-light: #f8fafc;
+      --text-light: #e5e7eb;
+      --text-dark: #0f172a;
+      --neon: #22ff88;
+      --gray: #94a3b8;
     }
 
     * {
@@ -24,29 +25,30 @@
 
     body {
       margin: 0;
-      background: var(--light);
-      color: var(--dark);
+      background: var(--bg-light);
+      color: var(--text-dark);
       line-height: 1.6;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       text-align: center;
     }
 
     h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 20px;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
     }
 
     h2 {
-      font-size: 2.2rem;
+      font-size: clamp(2rem, 4vw, 2.6rem);
       font-weight: 800;
       margin-bottom: 20px;
     }
@@ -57,62 +59,87 @@
       margin-bottom: 20px;
     }
 
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
+      background: radial-gradient(circle at top, #16204a, #070b18 70%);
+      color: var(--text-light);
     }
 
     .hero p {
       color: #cbd5f5;
+      max-width: 720px;
+      margin: 0 auto 30px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 18px 36px;
+      padding: 20px 42px;
       font-size: 1.1rem;
-      font-weight: 700;
-      color: white;
-      background: var(--green);
-      border-radius: 12px;
+      font-weight: 800;
+      color: #0b1020;
+      background: var(--neon);
+      border-radius: 14px;
       text-decoration: none;
-      box-shadow: 0 10px 30px rgba(16,185,129,0.3);
-      transition: transform 0.2s ease;
+      box-shadow: 0 0 40px rgba(34,255,136,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 60px rgba(34,255,136,0.55);
     }
 
+    .hint {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 12px;
+    }
+
+    /* CARDS */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+      margin-top: 50px;
     }
 
     .card {
       background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      padding: 34px 30px;
+      border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
       font-size: 1.05rem;
+      font-weight: 600;
     }
 
-    .light {
+    .card span {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    /* LIGHT SECTION */
+    .soft {
       background: linear-gradient(135deg, #ecfeff, #f0fdf4);
     }
 
+    /* FOOTER */
     footer {
-      padding: 40px 20px;
+      padding: 60px 20px;
+      background: #020617;
+      color: #94a3b8;
       text-align: center;
-      font-size: 0.9rem;
-      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    footer strong {
+      color: var(--neon);
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 2.3rem; }
-      h2 { font-size: 1.8rem; }
+      section {
+        padding: 70px 16px;
+      }
     }
   </style>
 </head>
@@ -122,50 +149,58 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>Warum fühle ich mich ständig müde?</h1>
+      <h1>Wie voll ist dein Akku wirklich?</h1>
       <p>
-        Schule, Handy, Tempo, Erwartungen.<br>
-        Finde in 2 Minuten heraus, was deinem Akku Energie zieht – ohne Bewertung.
+        Schule. Handy. Dauerstress.<br>
+        Kein Drama – aber vielleicht läuft dein Akku auf Reserve.
+        Check’s selbst. Ehrlich. Ohne Bewertung.
       </p>
 
       <a class="btn"
          href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
          target="_blank" rel="noopener">
-        Zum Energie-Check →
+        Energie-Check starten →
       </a>
 
-      <p style="font-size:0.9rem; margin-top:12px;">
-        2 Minuten · anonym · kostenlos
-      </p>
+      <div class="hint">⏱ 2 Minuten · 🔒 anonym · 💸 kostenlos</div>
     </div>
   </section>
 
   <!-- WARUM -->
   <section>
     <div class="container">
-      <h2>Warum fühlen sich so viele Jugendliche erschöpft?</h2>
+      <h2>Warum so viele Jugendliche leer laufen</h2>
 
       <div class="cards">
-        <div class="card">📱 Dauer-Online ohne echte Pausen</div>
-        <div class="card">⚡ Schule, Termine, Erwartungen</div>
-        <div class="card">🔋 Kein echtes Auftanken mehr</div>
+        <div class="card">
+          <span>📱</span>
+          Dauer-Online. Kaum echte Pausen für dein Gehirn.
+        </div>
+        <div class="card">
+          <span>⚡</span>
+          Schule, Termine, Erwartungen – alles zieht Energie.
+        </div>
+        <div class="card">
+          <span>🔋</span>
+          Zu wenig echtes Auftanken. Kein Wunder, dass du müde bist.
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CHECK -->
-  <section class="light">
+  <section class="soft">
     <div class="container">
       <h2>Der Energie-Check</h2>
       <p>
-        Kein Test. Keine Bewertung. Keine Diagnose.<br>
-        Nur ehrliche Fragen zu deinem Alltag.
+        Kein Test. Keine Diagnose.<br>
+        Nur ehrliche Fragen zu Schlaf, Bildschirm, Stress & Alltag.
       </p>
 
       <a class="btn"
          href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
          target="_blank" rel="noopener">
-        Jetzt Check starten →
+        Jetzt starten →
       </a>
     </div>
   </section>
@@ -175,23 +210,23 @@
     <div class="container">
       <h2>Für Eltern</h2>
       <p>
-        Der Energie-Check hilft Jugendlichen, sich selbst besser zu verstehen.<br>
-        Und erleichtert Gespräche – ohne Druck, ohne Vorwürfe.
+        Der Energie-Check hilft Jugendlichen, sich selbst besser zu verstehen –
+        und erleichtert Gespräche ohne Druck oder Vorwürfe.
       </p>
     </div>
   </section>
 
   <!-- VORTRAG -->
-  <section class="light">
+  <section class="soft">
     <div class="container">
       <h2>Kostenloser Live-Vortrag für Eltern</h2>
       <p>
-        Jugendliche besser verstehen – Energie, Lernen und Alltag einordnen.<br>
+        Jugendliche besser verstehen: Energie, Lernen & Alltag einordnen.<br>
         Live per Zoom · Termin folgt per E-Mail.
       </p>
 
       <p style="font-size:0.95rem;">
-        👉 Interesse? Schreiben Sie mir eine kurze Mail an:<br>
+        👉 Interesse? Schreiben Sie eine kurze Mail an:<br>
         <strong>info@deine-email.de</strong>
       </p>
 
@@ -201,9 +236,9 @@
     </div>
   </section>
 
-  <!-- ABSCHLUSS -->
+  <!-- FOOTER -->
   <footer>
-    Energie ist keine Frage des Wollens.<br>
+    Energie ist keine Frage von Willenskraft.<br>
     <strong>Verstehen statt bewerten.</strong>
   </footer>
 
