@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energie-Check – Mobile First</title>
+  <title>Energie-Check – Wie voll ist dein Akku?</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
@@ -26,6 +26,7 @@
       margin: 0;
       background: var(--light);
       color: var(--text-dark);
+      padding-bottom: 90px;
     }
 
     section {
@@ -33,28 +34,31 @@
     }
 
     .container {
-      max-width: 520px; /* MOBILE FIRST */
+      max-width: 520px;
       margin: 0 auto;
       text-align: center;
+    }
+
+    .kicker {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     h1 {
       font-size: 2.2rem;
       font-weight: 900;
       line-height: 1.15;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     h2 {
       font-size: 1.7rem;
       font-weight: 800;
       margin-bottom: 12px;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 10px;
     }
 
     p {
@@ -64,11 +68,10 @@
       line-height: 1.5;
     }
 
-    /* HERO */
     .hero {
       background: radial-gradient(circle at top, #16204a, #070b18 70%);
       color: var(--text-light);
-      padding-top: 80px;
+      padding-top: 90px;
     }
 
     .hero p {
@@ -80,7 +83,7 @@
       width: 100%;
       padding: 18px;
       font-size: 1.1rem;
-      font-weight: 800;
+      font-weight: 900;
       color: #070b18;
       background: var(--accent);
       border-radius: 14px;
@@ -91,11 +94,10 @@
 
     .hint {
       font-size: 0.8rem;
-      opacity: 0.8;
+      opacity: 0.85;
       margin-top: 10px;
     }
 
-    /* INFO BOXES */
     .box {
       background: white;
       padding: 22px;
@@ -109,12 +111,6 @@
       background: linear-gradient(135deg, #ecfeff, #f0fdf4);
     }
 
-    /* ABOUT */
-    .about p {
-      color: #334155;
-    }
-
-    /* FOOTER */
     footer {
       background: #020617;
       color: #94a3b8;
@@ -127,8 +123,8 @@
       color: var(--accent);
       text-decoration: none;
       font-weight: 600;
-      display: inline-block;
       margin: 6px;
+      display: inline-block;
     }
 
     #impressum, #datenschutz {
@@ -143,11 +139,39 @@
       color: var(--accent);
     }
 
-    /* DESKTOP OPTIMIERUNG */
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: -100px;
+      left: 0;
+      width: 100%;
+      background: rgba(7, 11, 24, 0.95);
+      padding: 10px 12px;
+      z-index: 999;
+      transition: bottom 0.3s ease;
+    }
+
+    .sticky-cta.visible {
+      bottom: 0;
+    }
+
+    .sticky-cta a {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: #070b18;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 16px;
+      border-radius: 14px;
+      text-decoration: none;
+    }
+
     @media (min-width: 768px) {
-      .container {
-        max-width: 900px;
-      }
+      .sticky-cta { display: none; }
+      body { padding-bottom: 0; }
+      .container { max-width: 900px; }
       h1 { font-size: 3rem; }
       h2 { font-size: 2.2rem; }
     }
@@ -159,8 +183,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1>Wie voll ist dein Akku?</h1>
-    <p>Schule. Handy. Dauerstress.<br>Check in 2 Minuten, wo deine Energie bleibt.</p>
+    <div class="kicker">Mal ehrlich:</div>
+    <h1>Wie voll ist dein Akku gerade wirklich?</h1>
+    <p>Schule, Handy, Dauerstress.<br>Viele merken erst hier, warum sie ständig müde sind.</p>
 
     <a class="btn"
        href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
@@ -178,8 +203,8 @@
     <h2>Warum so viele leer laufen</h2>
 
     <div class="box">📱 Dauer online – kaum echte Pausen</div>
-    <div class="box">⚡ Schule, Tempo, Erwartungen</div>
-    <div class="box">🔋 Zu wenig echtes Auftanken</div>
+    <div class="box">⚡ Schule, Erwartungen, Tempo</div>
+    <div class="box">🔋 Funktionieren statt auftanken</div>
   </div>
 </section>
 
@@ -187,7 +212,7 @@
 <section class="soft">
   <div class="container">
     <h2>Der Energie-Check</h2>
-    <p>Keine Bewertung. Keine Diagnose.<br>Nur ehrliche Fragen.</p>
+    <p>Kein Test. Keine Bewertung.<br>Nur ehrliche Fragen zu deinem Alltag.</p>
 
     <a class="btn"
        href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
@@ -201,29 +226,47 @@
 <section>
   <div class="container">
     <h2>Für Eltern</h2>
-    <p>Der Check hilft Jugendlichen, sich selbst besser zu verstehen – und öffnet Gespräche ohne Druck.</p>
+    <p>
+      Viele Eltern spüren, dass ihr Kind müde ist –  
+      aber Gespräche enden oft in Diskussionen statt Lösungen.
+    </p>
+    <p>
+      Der Energie-Check schafft eine gemeinsame Grundlage –  
+      ohne Druck, ohne Schuld, ohne Vorwürfe.
+    </p>
   </div>
 </section>
 
 <!-- WIR -->
 <section class="soft">
-  <div class="container about">
-    <h2>Wir sind David & Stefanie</h2>
+  <div class="container">
+    <h2>Wer wir sind</h2>
 
-    <p><strong>Stefanie</strong> ist mehrfache Mutter, Nähr- und Vitalstoffcoachin und arbeitet ganzheitlich mit Familien.</p>
-    <p><strong>David</strong> ist Familienvater und beschäftigt sich seit Jahren mit gesunden Routinen und alltagstauglicher Ernährung.</p>
+    <p>
+      <strong>Stefanie</strong> ist mehrfache Mutter, Nähr- und Vitalstoffcoachin  
+      und arbeitet ganzheitlich mit Familien.
+    </p>
 
-    <p>Mit dem Energie-Check wollen wir Jugendlichen helfen, ihren Alltag besser zu verstehen – und Eltern eine neue Perspektive geben.</p>
+    <p>
+      <strong>David</strong> ist Familienvater und beschäftigt sich seit Jahren  
+      mit gesunden Routinen und alltagstauglicher Ernährung.
+    </p>
+
+    <p>
+      Mit dem Energie-Check möchten wir Jugendlichen helfen,  
+      sich selbst besser zu verstehen –  
+      und Eltern neue, entspannte Perspektiven eröffnen.
+    </p>
   </div>
 </section>
 
 <!-- VORTRAG -->
 <section>
   <div class="container">
-    <h2>Kostenloser Live-Vortrag</h2>
-    <p>Für Eltern · Live per Zoom</p>
-
+    <h2>Kostenloser Live-Vortrag für Eltern</h2>
+    <p>Jugendliche verstehen. Energie einordnen. Streit reduzieren.</p>
     <p><strong>info@ganzheitlichleben.online</strong></p>
+    <p style="font-size:0.8rem;">Live per Zoom · Termin folgt per E-Mail</p>
   </div>
 </section>
 
@@ -235,8 +278,7 @@
 
 <!-- IMPRESSUM -->
 <section id="impressum">
-  <h3>Impressum</h3>
-  <p><strong>David Müller</strong><br>Trillerstr. 10 · 08066 Zwickau<br>eq-david@gmx.de</p>
+  <p><strong>David Müller</strong><br>Trillerstr. 10 · 08066 Zwickau · eq-david@gmx.de</p>
   <p><strong>Stefanie Heidrich</strong><br>Dresdner Str. 1a · 01809 Dohna<br>
     <a href="https://www.ganzheitlichleben.online" target="_blank">www.ganzheitlichleben.online</a>
   </p>
@@ -245,13 +287,33 @@
 
 <!-- DATENSCHUTZ -->
 <section id="datenschutz">
-  <h3>Datenschutz</h3>
   <p>Diese Website erhebt selbst keine personenbezogenen Daten.</p>
-  <p>Der Energie-Check läuft über Google Forms:
+  <p>
+    Der Energie-Check wird über Google Forms bereitgestellt:
     <a href="https://policies.google.com/privacy" target="_blank">Datenschutz Google</a>
   </p>
   <p>Kontakt per E-Mail dient ausschließlich der Organisation des Vortrags.</p>
 </section>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
+     target="_blank" rel="noopener">
+     ⚡ Jetzt Energie checken
+  </a>
+</div>
+
+<script>
+  const sticky = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (scrollPercent > 0.25) {
+      sticky.classList.add('visible');
+    } else {
+      sticky.classList.remove('visible');
+    }
+  });
+</script>
 
 </body>
 </html>
