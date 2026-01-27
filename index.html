@@ -52,10 +52,15 @@
       margin-bottom: 20px;
     }
 
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
     p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--gray);
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .hero {
@@ -120,7 +125,7 @@
     }
 
     footer {
-      padding: 60px 20px;
+      padding: 50px 20px;
       background: #020617;
       color: #94a3b8;
       text-align: center;
@@ -131,19 +136,29 @@
       color: var(--neon);
       text-decoration: none;
       font-weight: 600;
+      margin: 0 8px;
     }
 
-    #impressum {
+    #impressum,
+    #datenschutz {
       background: #020617;
       color: #cbd5f5;
       font-size: 0.85rem;
-      padding: 60px 20px;
+      padding: 70px 20px;
       text-align: center;
     }
 
-    #impressum p {
+    #impressum p,
+    #datenschutz p {
       color: #cbd5f5;
       margin-bottom: 10px;
+    }
+
+    #impressum a,
+    #datenschutz a {
+      color: var(--neon);
+      text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -226,12 +241,13 @@
 
   <!-- FOOTER -->
   <footer>
-    <a href="#impressum">Impressum</a>
+    <a href="#impressum">Impressum</a> ·
+    <a href="#datenschutz">Datenschutz</a>
   </footer>
 
   <!-- IMPRESSUM -->
   <section id="impressum">
-    <p><strong>Impressum</strong></p>
+    <h3>Impressum</h3>
     <p>Angaben gemäß § 5 TMG</p>
 
     <p>
@@ -246,12 +262,46 @@
       Dresdner Str. 1a<br>
       01809 Dohna<br>
       E-Mail: info@ganzheitlichleben.online<br>
-      Website: www.ganzheitlichleben.online
+      Website:
+      <a href="https://www.ganzheitlichleben.online"
+         target="_blank" rel="noopener noreferrer">
+         www.ganzheitlichleben.online
+      </a>
     </p>
 
     <p>
       Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
       <strong>David Müller</strong>
+    </p>
+  </section>
+
+  <!-- DATENSCHUTZ -->
+  <section id="datenschutz">
+    <h3>Datenschutzhinweis</h3>
+
+    <p>
+      Diese Website erhebt selbst keine personenbezogenen Daten.
+    </p>
+
+    <p>
+      Der Energie-Check wird über <strong>Google Forms</strong> bereitgestellt.
+      Beim Aufruf gelten die Datenschutzbestimmungen von Google:<br>
+      <a href="https://policies.google.com/privacy"
+         target="_blank" rel="noopener noreferrer">
+         https://policies.google.com/privacy
+      </a>
+    </p>
+
+    <p>
+      Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschließlich
+      zur Bearbeitung Ihrer Anfrage und zur Organisation des Vortrags verwendet.
+      Eine Weitergabe an Dritte erfolgt nicht.
+    </p>
+
+    <p>
+      Verantwortlich im Sinne der DSGVO:<br>
+      David Müller &amp; Stefanie Heidrich<br>
+      (Kontaktdaten siehe Impressum)
     </p>
   </section>
 
