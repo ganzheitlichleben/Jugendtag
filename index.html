@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Energie-Check – Wie voll ist dein Akku?</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
@@ -59,7 +58,6 @@
       margin-bottom: 20px;
     }
 
-    /* HERO */
     .hero {
       background: radial-gradient(circle at top, #16204a, #070b18 70%);
       color: var(--text-light);
@@ -95,7 +93,6 @@
       margin-top: 12px;
     }
 
-    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -118,28 +115,35 @@
       margin-bottom: 14px;
     }
 
-    /* LIGHT SECTION */
     .soft {
       background: linear-gradient(135deg, #ecfeff, #f0fdf4);
     }
 
-    /* FOOTER */
     footer {
       padding: 60px 20px;
       background: #020617;
       color: #94a3b8;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
-    footer strong {
+    footer a {
       color: var(--neon);
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    @media (max-width: 600px) {
-      section {
-        padding: 70px 16px;
-      }
+    #impressum {
+      background: #020617;
+      color: #cbd5f5;
+      font-size: 0.85rem;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #impressum p {
+      color: #cbd5f5;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -153,7 +157,6 @@
       <p>
         Schule. Handy. Dauerstress.<br>
         Kein Drama – aber vielleicht läuft dein Akku auf Reserve.
-        Check’s selbst. Ehrlich. Ohne Bewertung.
       </p>
 
       <a class="btn"
@@ -172,18 +175,9 @@
       <h2>Warum so viele Jugendliche leer laufen</h2>
 
       <div class="cards">
-        <div class="card">
-          <span>📱</span>
-          Dauer-Online. Kaum echte Pausen für dein Gehirn.
-        </div>
-        <div class="card">
-          <span>⚡</span>
-          Schule, Termine, Erwartungen – alles zieht Energie.
-        </div>
-        <div class="card">
-          <span>🔋</span>
-          Zu wenig echtes Auftanken. Kein Wunder, dass du müde bist.
-        </div>
+        <div class="card"><span>📱</span>Dauer-Online ohne echte Pausen</div>
+        <div class="card"><span>⚡</span>Schule, Erwartungen, Tempo</div>
+        <div class="card"><span>🔋</span>Zu wenig echtes Auftanken</div>
       </div>
     </div>
   </section>
@@ -192,10 +186,7 @@
   <section class="soft">
     <div class="container">
       <h2>Der Energie-Check</h2>
-      <p>
-        Kein Test. Keine Diagnose.<br>
-        Nur ehrliche Fragen zu Schlaf, Bildschirm, Stress & Alltag.
-      </p>
+      <p>Kein Test. Keine Bewertung. Nur ehrliche Fragen zu deinem Alltag.</p>
 
       <a class="btn"
          href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
@@ -220,14 +211,11 @@
   <section class="soft">
     <div class="container">
       <h2>Kostenloser Live-Vortrag für Eltern</h2>
-      <p>
-        Jugendliche besser verstehen: Energie, Lernen & Alltag einordnen.<br>
-        Live per Zoom · Termin folgt per E-Mail.
-      </p>
+      <p>Live per Zoom · Termin folgt per E-Mail</p>
 
       <p style="font-size:0.95rem;">
-        👉 Interesse? Schreiben Sie eine kurze Mail an:<br>
-        <strong>info@deine-email.de</strong>
+        👉 Interesse? Schreiben Sie an:<br>
+        <strong>info@ganzheitlichleben.online</strong>
       </p>
 
       <p style="font-size:0.8rem;">
@@ -238,9 +226,34 @@
 
   <!-- FOOTER -->
   <footer>
-    Energie ist keine Frage von Willenskraft.<br>
-    <strong>Verstehen statt bewerten.</strong>
+    <a href="#impressum">Impressum</a>
   </footer>
+
+  <!-- IMPRESSUM -->
+  <section id="impressum">
+    <p><strong>Impressum</strong></p>
+    <p>Angaben gemäß § 5 TMG</p>
+
+    <p>
+      <strong>David Müller</strong><br>
+      Trillerstr. 10<br>
+      08066 Zwickau<br>
+      E-Mail: eq-david@gmx.de
+    </p>
+
+    <p>
+      <strong>Stefanie Heidrich</strong><br>
+      Dresdner Str. 1a<br>
+      01809 Dohna<br>
+      E-Mail: info@ganzheitlichleben.online<br>
+      Website: www.ganzheitlichleben.online
+    </p>
+
+    <p>
+      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
+      <strong>David Müller</strong>
+    </p>
+  </section>
 
 </body>
 </html>
