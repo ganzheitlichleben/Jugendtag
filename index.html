@@ -3,177 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energie-Check – Wie voll ist dein Akku?</title>
+  <title>Energie-Check – Messe</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --dark: #070b18;
-      --light: #f8fafc;
-      --text-dark: #0f172a;
-      --text-light: #e5e7eb;
-      --accent: #22ff88;
-      --muted: #94a3b8;
+      --dark:#070b18;
+      --light:#f8fafc;
+      --accent:#22ff88;
+      --muted:#94a3b8;
     }
 
-    * {
-      box-sizing: border-box;
-      font-family: 'Inter', system-ui, sans-serif;
-    }
+    * { box-sizing:border-box; font-family:'Inter',system-ui,sans-serif; }
 
     body {
-      margin: 0;
-      background: var(--light);
-      color: var(--text-dark);
-      padding-bottom: 90px;
+      margin:0;
+      background:var(--light);
+      padding-bottom:90px;
+      color:#0f172a;
     }
 
-    section {
-      padding: 64px 16px;
-    }
+    section { padding:64px 16px; }
 
     .container {
-      max-width: 520px;
-      margin: 0 auto;
-      text-align: center;
+      max-width:520px;
+      margin:0 auto;
+      text-align:center;
     }
 
     .kicker {
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 10px;
+      color:var(--accent);
+      font-size:.85rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:700;
+      margin-bottom:10px;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: 1.7rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
+    h1 { font-size:2.2rem; font-weight:900; margin-bottom:14px; }
+    h2 { font-size:1.7rem; font-weight:800; margin-bottom:12px; }
 
     p {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 14px;
-      line-height: 1.5;
+      color:var(--muted);
+      line-height:1.5;
+      margin-bottom:14px;
     }
 
     .hero {
-      background: radial-gradient(circle at top, #16204a, #070b18 70%);
-      color: var(--text-light);
-      padding-top: 90px;
+      background:radial-gradient(circle at top,#16204a,#070b18 70%);
+      color:#e5e7eb;
+      padding-top:90px;
     }
 
-    .hero p {
-      color: #cbd5f5;
-    }
+    .hero p { color:#cbd5f5; }
 
     .btn {
-      display: block;
-      width: 100%;
-      padding: 18px;
-      font-size: 1.1rem;
-      font-weight: 900;
-      color: #070b18;
-      background: var(--accent);
-      border-radius: 14px;
-      text-decoration: none;
-      box-shadow: 0 0 30px rgba(34,255,136,0.4);
-      margin-top: 18px;
-    }
-
-    .hint {
-      font-size: 0.8rem;
-      opacity: 0.85;
-      margin-top: 10px;
+      display:block;
+      width:100%;
+      padding:18px;
+      background:var(--accent);
+      color:#070b18;
+      font-weight:900;
+      border-radius:14px;
+      text-decoration:none;
+      margin-top:18px;
     }
 
     .box {
-      background: white;
-      padding: 22px;
-      border-radius: 18px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-      margin-bottom: 18px;
-      font-weight: 600;
+      background:white;
+      padding:22px;
+      border-radius:18px;
+      margin-bottom:18px;
+      font-weight:600;
+      box-shadow:0 12px 28px rgba(0,0,0,.08);
     }
 
-    .soft {
-      background: linear-gradient(135deg, #ecfeff, #f0fdf4);
+    .soft { background:linear-gradient(135deg,#ecfeff,#f0fdf4); }
+
+    /* Bild */
+    .image-wrapper {
+      margin:24px 0;
+    }
+
+    .image-wrapper img {
+      width:100%;
+      border-radius:18px;
+      box-shadow:0 12px 28px rgba(0,0,0,.15);
     }
 
     footer {
-      background: #020617;
-      color: #94a3b8;
-      font-size: 0.75rem;
-      padding: 40px 16px;
-      text-align: center;
+      background:#020617;
+      color:#94a3b8;
+      padding:40px 16px;
+      font-size:.75rem;
+      text-align:center;
     }
 
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      margin: 6px;
-      display: inline-block;
-    }
-
-    #impressum, #datenschutz {
-      background: #020617;
-      color: #cbd5f5;
-      font-size: 0.75rem;
-      padding: 50px 16px;
-      text-align: center;
-    }
-
-    #impressum a, #datenschutz a {
-      color: var(--accent);
-    }
+    footer a { color:var(--accent); text-decoration:none; margin:6px; }
 
     /* Sticky CTA */
-    .sticky-cta {
-      position: fixed;
-      bottom: -100px;
-      left: 0;
-      width: 100%;
-      background: rgba(7, 11, 24, 0.95);
-      padding: 10px 12px;
-      z-index: 999;
-      transition: bottom 0.3s ease;
+    .sticky {
+      position:fixed;
+      bottom:-100px;
+      left:0;
+      width:100%;
+      padding:10px 12px;
+      background:rgba(7,11,24,.95);
+      transition:.3s;
+      z-index:999;
     }
 
-    .sticky-cta.visible {
-      bottom: 0;
+    .sticky.visible { bottom:0; }
+
+    .sticky a {
+      display:block;
+      background:var(--accent);
+      padding:16px;
+      border-radius:14px;
+      font-weight:900;
+      text-align:center;
+      color:#070b18;
+      text-decoration:none;
     }
 
-    .sticky-cta a {
-      display: block;
-      width: 100%;
-      background: var(--accent);
-      color: #070b18;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 900;
-      padding: 16px;
-      border-radius: 14px;
-      text-decoration: none;
-    }
-
-    @media (min-width: 768px) {
-      .sticky-cta { display: none; }
-      body { padding-bottom: 0; }
-      .container { max-width: 900px; }
-      h1 { font-size: 3rem; }
-      h2 { font-size: 2.2rem; }
+    @media(min-width:768px){
+      .sticky{display:none;}
+      body{padding-bottom:0;}
+      .container{max-width:900px;}
     }
   </style>
 </head>
@@ -183,17 +140,17 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="kicker">Mal ehrlich:</div>
-    <h1>Wie voll ist dein Akku gerade wirklich?</h1>
-    <p>Schule, Handy, Dauerstress.<br>Viele merken erst hier, warum sie ständig müde sind.</p>
+    <div class="kicker">Mal ehrlich</div>
+    <h1>Wie voll ist dein Akku wirklich?</h1>
+    <p>Viele Jugendliche merken erst hier, warum sie ständig müde sind.</p>
 
     <a class="btn"
        href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
-       target="_blank" rel="noopener">
-       Jetzt Energie checken
+       target="_blank">
+      Jetzt Energie checken
     </a>
 
-    <div class="hint">⏱ 2 Minuten · 🔒 anonym · 💸 kostenlos</div>
+    <p style="font-size:.8rem;">⏱ 2 Minuten · anonym · kostenlos</p>
   </div>
 </section>
 
@@ -201,117 +158,68 @@
 <section>
   <div class="container">
     <h2>Warum so viele leer laufen</h2>
-
     <div class="box">📱 Dauer online – kaum echte Pausen</div>
-    <div class="box">⚡ Schule, Erwartungen, Tempo</div>
+    <div class="box">⚡ Stress, Tempo, Erwartungen</div>
     <div class="box">🔋 Funktionieren statt auftanken</div>
   </div>
 </section>
 
-<!-- CHECK -->
-<section class="soft">
-  <div class="container">
-    <h2>Der Energie-Check</h2>
-    <p>Kein Test. Keine Bewertung.<br>Nur ehrliche Fragen zu deinem Alltag.</p>
-
-    <a class="btn"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
-       target="_blank" rel="noopener">
-       Jetzt starten
-    </a>
-  </div>
-</section>
-
 <!-- ELTERN -->
-<section>
+<section class="soft">
   <div class="container">
     <h2>Für Eltern</h2>
+
+    <div class="image-wrapper">
+      <!-- HIER BILD-URL AUSTAUSCHEN -->
+      <img src="https://placehold.co/800x600/png?text=Eltern+%26+Jugendliche" alt="Eltern und Jugendliche im Alltag">
+    </div>
+
     <p>
-      Viele Eltern spüren, dass ihr Kind müde ist –  
-      aber Gespräche enden oft in Diskussionen statt Lösungen.
+      Viele Eltern spüren, dass ihr Kind müde oder überfordert ist –
+      aber Gespräche führen oft zu Frust statt Lösungen.
     </p>
+
     <p>
-      Der Energie-Check schafft eine gemeinsame Grundlage –  
-      ohne Druck, ohne Schuld, ohne Vorwürfe.
+      In unserem kostenlosen Live-Elternabend zeigen wir,
+      warum Jugendliche heute unter Dauerstress stehen
+      und welche Rolle Nährstoffe beim Lernen und im Umgang mit Stress spielen können.
+    </p>
+
+    <p>
+      📅 <strong>10.02.2026</strong> · 🕖 <strong>19:00 Uhr</strong><br>
+      💻 Live per Zoom · kostenlos
+    </p>
+
+    <a class="btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSdQQ7wI2JVmVf_Bgx2J3ogZ8swh3KAB9KctdYrdoS3qN4kRmg/viewform?usp=publish-editor"
+       target="_blank">
+      Zum Elternabend anmelden
+    </a>
+
+    <p style="font-size:.75rem;">
+      Zoom-Link wird nach Anmeldung per E-Mail versendet
     </p>
   </div>
 </section>
 
-<!-- WIR -->
-<section class="soft">
-  <div class="container">
-    <h2>Wer wir sind</h2>
-
-    <p>
-      <strong>Stefanie</strong> ist mehrfache Mutter, Nähr- und Vitalstoffcoachin  
-      und arbeitet ganzheitlich mit Familien.
-    </p>
-
-    <p>
-      <strong>David</strong> ist Familienvater und beschäftigt sich seit Jahren  
-      mit gesunden Routinen und alltagstauglicher Ernährung.
-    </p>
-
-    <p>
-      Mit dem Energie-Check möchten wir Jugendlichen helfen,  
-      sich selbst besser zu verstehen –  
-      und Eltern neue, entspannte Perspektiven eröffnen.
-    </p>
-  </div>
-</section>
-
-<!-- VORTRAG -->
-<section>
-  <div class="container">
-    <h2>Kostenloser Live-Vortrag für Eltern</h2>
-    <p>Jugendliche verstehen. Energie einordnen. Streit reduzieren.</p>
-    <p><strong>info@ganzheitlichleben.online</strong></p>
-    <p style="font-size:0.8rem;">Live per Zoom · Termin folgt per E-Mail</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <a href="#impressum">Impressum</a>
   <a href="#datenschutz">Datenschutz</a>
 </footer>
 
-<!-- IMPRESSUM -->
-<section id="impressum">
-  <p><strong>David Müller</strong><br>Trillerstr. 10 · 08066 Zwickau · eq-david@gmx.de</p>
-  <p><strong>Stefanie Heidrich</strong><br>Dresdner Str. 1a · 01809 Dohna<br>
-    <a href="https://www.ganzheitlichleben.online" target="_blank">www.ganzheitlichleben.online</a>
-  </p>
-  <p>Verantwortlich i.S.d. §55 RStV: David Müller</p>
-</section>
-
-<!-- DATENSCHUTZ -->
-<section id="datenschutz">
-  <p>Diese Website erhebt selbst keine personenbezogenen Daten.</p>
-  <p>
-    Der Energie-Check wird über Google Forms bereitgestellt:
-    <a href="https://policies.google.com/privacy" target="_blank">Datenschutz Google</a>
-  </p>
-  <p>Kontakt per E-Mail dient ausschließlich der Organisation des Vortrags.</p>
-</section>
-
-<!-- STICKY CTA -->
-<div class="sticky-cta" id="stickyCta">
+<!-- STICKY -->
+<div class="sticky" id="sticky">
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
-     target="_blank" rel="noopener">
-     ⚡ Jetzt Energie checken
+     target="_blank">
+    ⚡ Jetzt Energie checken
   </a>
 </div>
 
 <script>
-  const sticky = document.getElementById('stickyCta');
-  window.addEventListener('scroll', () => {
-    const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (scrollPercent > 0.25) {
-      sticky.classList.add('visible');
-    } else {
-      sticky.classList.remove('visible');
-    }
+  const sticky=document.getElementById('sticky');
+  window.addEventListener('scroll',()=>{
+    const p=window.scrollY/(document.body.scrollHeight-window.innerHeight);
+    p>.25?sticky.classList.add('visible'):sticky.classList.remove('visible');
   });
 </script>
 
