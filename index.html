@@ -37,19 +37,39 @@
       text-align: center;
     }
 
-    h1 { font-size: 2.2rem; font-weight: 900; }
-    h2 { font-size: 1.7rem; font-weight: 800; }
-    h3 { font-size: 1.2rem; font-weight: 800; }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
 
     p {
       color: var(--muted);
       line-height: 1.55;
+      margin-bottom: 14px;
     }
 
+    /* HERO */
     .hero {
       background: radial-gradient(circle at top, #16204a, #070b18 70%);
       color: #e5e7eb;
       padding-top: 90px;
+    }
+
+    .hero p {
+      color: #cbd5f5;
     }
 
     .btn {
@@ -61,7 +81,7 @@
       font-weight: 900;
       border-radius: 14px;
       text-decoration: none;
-      margin: 18px 0;
+      margin-top: 18px;
     }
 
     .box {
@@ -69,11 +89,45 @@
       padding: 22px;
       border-radius: 18px;
       margin-bottom: 18px;
+      font-weight: 600;
       box-shadow: 0 12px 28px rgba(0,0,0,.08);
     }
 
     .soft {
       background: linear-gradient(135deg, #ecfeff, #f0fdf4);
+    }
+
+    /* IMAGE */
+    .image-wrapper {
+      margin: 24px 0;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.15);
+      display: block;
+    }
+
+    /* TRUST */
+    .trust {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.08);
+      text-align: left;
+      margin: 28px 0;
+    }
+
+    /* LEGAL */
+    .legal {
+      background: #ffffff;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .legal p {
+      color: #334155;
     }
 
     footer {
@@ -88,16 +142,6 @@
       color: var(--accent);
       text-decoration: none;
       margin: 0 8px;
-    }
-
-    .legal {
-      background: #ffffff;
-      text-align: left;
-    }
-
-    .legal p {
-      font-size: 0.85rem;
-      color: #334155;
     }
   </style>
 </head>
@@ -114,6 +158,8 @@
        href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform">
       Jetzt Energie-Check starten
     </a>
+
+    <p style="font-size:0.8rem;">⏱ 2 Minuten · anonym · kostenlos</p>
   </div>
 </section>
 
@@ -131,7 +177,20 @@
 <section class="soft">
   <div class="container">
     <h2>Für Eltern</h2>
-    <p>Kostenloser Live-Elternabend</p>
+
+    <div class="image-wrapper">
+      <img src="eltern-jugendliche.png" alt="Eltern und Jugendliche im Alltag">
+    </div>
+
+    <div class="trust">
+      <h3>Warum wir das machen</h3>
+      <p><strong>Wir sind selbst Eltern.</strong> Und wir erleben täglich, wie herausfordernd der Alltag für Jugendliche geworden ist.</p>
+      <p><strong>Stefanie</strong> ist mehrfache Mutter und ganzheitliche Nähr- und Vitalstoffcoachin.<br>
+         <strong>David</strong> ist Familienvater und beschäftigt sich seit Jahren mit gesunden Routinen und Nährstoffen im Alltag.</p>
+      <p>Uns geht es um ehrliche Erfahrung, Verständnis und alltagstaugliche Lösungen – ohne Heilsversprechen.</p>
+    </div>
+
+    <p><strong>Kostenloser Live-Elternabend</strong></p>
     <p>
       📅 <strong>23.02.2026</strong><br>
       🕖 <strong>19:00 Uhr</strong><br>
@@ -142,6 +201,8 @@
        href="https://docs.google.com/forms/d/e/1FAIpQLSdQQ7wI2JVmVf_Bgx2J3ogZ8swh3KAB9KctdYrdoS3qN4kRmg/viewform">
       Zum Elternabend anmelden
     </a>
+
+    <p style="font-size:0.75rem;">Zoom-Link wird nach Anmeldung per E-Mail versendet</p>
   </div>
 </section>
 
@@ -149,19 +210,10 @@
 <section id="impressum" class="legal">
   <div class="container">
     <h3>Impressum</h3>
-    <p>
-      <strong>David Müller</strong><br>
-      Trillerstr. 10<br>
-      08066 Zwickau<br>
-      E-Mail: eq-david@gmx.de
-    </p>
-    <p>
-      <strong>Stefanie Heidrich</strong><br>
-      Dresdner Str. 1a<br>
-      01809 Dohna<br>
-      E-Mail: info@ganzheitlichleben.online<br>
-      Website: <a href="https://www.ganzheitlichleben.online" target="_blank">www.ganzheitlichleben.online</a>
-    </p>
+    <p><strong>David Müller</strong><br>Trillerstr. 10 · 08066 Zwickau<br>E-Mail: eq-david@gmx.de</p>
+    <p><strong>Stefanie Heidrich</strong><br>Dresdner Str. 1a · 01809 Dohna<br>
+    E-Mail: info@ganzheitlichleben.online<br>
+    Website: <a href="https://www.ganzheitlichleben.online" target="_blank">www.ganzheitlichleben.online</a></p>
   </div>
 </section>
 
@@ -169,15 +221,9 @@
 <section id="datenschutz" class="legal">
   <div class="container">
     <h3>Datenschutz</h3>
-    <p>
-      Diese Website speichert keine Cookies und erhebt keine personenbezogenen Daten.
-    </p>
-    <p>
-      Beim Klick auf externe Links (Google Forms, Zoom) gelten die Datenschutzrichtlinien der jeweiligen Anbieter.
-    </p>
-    <p>
-      Die eingegebenen Daten werden ausschließlich zur Organisation des Elternabends verwendet.
-    </p>
+    <p>Diese Website speichert keine Cookies und erhebt keine personenbezogenen Daten.</p>
+    <p>Bei externen Links (Google Forms, Zoom) gelten die Datenschutzrichtlinien der jeweiligen Anbieter.</p>
+    <p>Die eingegebenen Daten werden ausschließlich zur Organisation des Elternabends verwendet.</p>
   </div>
 </section>
 
