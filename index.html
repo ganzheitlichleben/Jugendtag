@@ -70,7 +70,6 @@
       margin-bottom: 14px;
     }
 
-    /* HERO */
     .hero {
       background: radial-gradient(circle at top, #16204a, #070b18 70%);
       color: #e5e7eb;
@@ -106,7 +105,6 @@
       background: linear-gradient(135deg, #ecfeff, #f0fdf4);
     }
 
-    /* IMAGE */
     .image-wrapper {
       margin: 24px 0;
     }
@@ -118,7 +116,6 @@
       display: block;
     }
 
-    /* TRUST BOX */
     .trust {
       background: #ffffff;
       border-radius: 18px;
@@ -126,10 +123,6 @@
       box-shadow: 0 12px 28px rgba(0,0,0,.08);
       text-align: left;
       margin: 28px 0;
-    }
-
-    .trust strong {
-      color: #0f172a;
     }
 
     footer {
@@ -146,7 +139,6 @@
       margin: 6px;
     }
 
-    /* STICKY CTA */
     .sticky {
       position: fixed;
       bottom: -100px;
@@ -166,132 +158,3 @@
       display: block;
       background: var(--accent);
       padding: 16px;
-      border-radius: 14px;
-      font-weight: 900;
-      text-align: center;
-      color: #070b18;
-      text-decoration: none;
-    }
-
-    @media (min-width: 768px) {
-      .sticky { display: none; }
-      body { padding-bottom: 0; }
-      .container { max-width: 900px; }
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="kicker">Mal ehrlich</div>
-    <h1>Wie voll ist dein Akku wirklich?</h1>
-    <p>Viele Jugendliche merken erst hier, warum sie ständig müde sind.</p>
-
-    <a class="btn"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
-       target="_blank">
-      Jetzt Energie checken
-    </a>
-
-    <p style="font-size:0.8rem;">⏱ 2 Minuten · anonym · kostenlos</p>
-  </div>
-</section>
-
-<!-- WARUM -->
-<section>
-  <div class="container">
-    <h2>Warum so viele leer laufen</h2>
-    <div class="box">📱 Dauer online – kaum echte Pausen</div>
-    <div class="box">⚡ Stress, Tempo, Erwartungen</div>
-    <div class="box">🔋 Funktionieren statt auftanken</div>
-  </div>
-</section>
-
-<!-- ELTERN -->
-<section class="soft">
-  <div class="container">
-    <h2>Für Eltern</h2>
-
-    <div class="image-wrapper">
-      <img src="eltern-jugendliche.png" alt="Eltern und Jugendliche im Alltag">
-    </div>
-
-    <p>
-      Viele Eltern spüren, dass ihr Kind müde oder überfordert ist –
-      aber Gespräche führen oft zu Frust statt Lösungen.
-    </p>
-
-    <!-- TRUST SECTION -->
-    <div class="trust">
-      <h3>Warum wir das machen</h3>
-      <p>
-        <strong>Wir sind selbst Eltern.</strong><br>
-        Und wir erleben täglich, wie herausfordernd der Alltag für Jugendliche geworden ist –
-        zwischen Schule, digitalen Reizen, Leistungsdruck und kaum echten Erholungsphasen.
-      </p>
-      <p>
-        <strong>Stefanie</strong> ist mehrfache Mutter und arbeitet als ganzheitliche
-        Nähr- und Vitalstoffcoachin mit Familien.<br>
-        <strong>David</strong> ist selbst Familienvater und beschäftigt sich seit Jahren
-        damit, wie gesunde Routinen und Nährstoffe realistisch in den Alltag integriert werden können.
-      </p>
-      <p>
-        Uns geht es nicht um perfekte Ernährung oder schnelle Lösungen,
-        sondern um <strong>Verständnis, alltagstaugliche Ansätze und ehrliche Erfahrung</strong>.
-      </p>
-    </div>
-
-    <p>
-      Im kostenlosen Live-Elternabend zeigen wir,
-      warum Jugendliche heute unter Dauerstress stehen
-      und welche Rolle Nährstoffe beim Lernen und im Umgang mit Stress spielen können.
-    </p>
-
-    <p>
-      📅 <strong>10.02.2026</strong><br>
-      🕖 <strong>19:00 Uhr</strong><br>
-      💻 Live per Zoom · kostenlos
-    </p>
-
-    <a class="btn"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSdQQ7wI2JVmVf_Bgx2J3ogZ8swh3KAB9KctdYrdoS3qN4kRmg/viewform?usp=publish-editor"
-       target="_blank">
-      Zum Elternabend anmelden
-    </a>
-
-    <p style="font-size:0.75rem;">
-      Zoom-Link wird nach Anmeldung per E-Mail versendet
-    </p>
-  </div>
-</section>
-
-<footer>
-  <a href="#impressum">Impressum</a>
-  <a href="#datenschutz">Datenschutz</a>
-</footer>
-
-<!-- STICKY BUTTON -->
-<div class="sticky" id="sticky">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtSqveCwgTgUQf2axZ7SqSDgxfqRwFtnDVe08pi61_E8Sf6g/viewform?usp=header"
-     target="_blank">
-    ⚡ Jetzt Energie checken
-  </a>
-</div>
-
-<script>
-  const sticky = document.getElementById('sticky');
-  window.addEventListener('scroll', () => {
-    const progress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (progress > 0.25) {
-      sticky.classList.add('visible');
-    } else {
-      sticky.classList.remove('visible');
-    }
-  });
-</script>
-
-</body>
-</html>
